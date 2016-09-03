@@ -16,6 +16,7 @@ gem 'summernote-rails'
 gem 'codemirror-rails'
 gem "font-awesome-rails"
 gem "paperclip", "~> 5.0.0"
+gem 'will_paginate'
 group :development, :test do
   gem 'byebug'
 end

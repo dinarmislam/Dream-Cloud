@@ -6,6 +6,9 @@
 
 	</div>
 <% end %>
+
+<%= will_paginate @blogs %>
+
 <p>
 <%= link_to 'New Blog', new_blog_path(@blog) %>
 </p>
