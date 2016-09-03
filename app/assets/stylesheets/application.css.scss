@@ -1,0 +1,255 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "summernote";
+@import "codemirror";
+@import "codemirror/themes/solarized";
+@import "blogs";
+
+body{
+  font-family: "Satisfy",cursive;
+
+}
+div.logo {
+
+    height: 40px;
+    margin: 4px 0 0 15px;
+    padding: 0;
+    position: relative;
+    width: 174px;
+    z-index: 1;
+}
+.logo img {
+    float: left;
+    height: 45px;
+}
+.menu_cabecera li, .menu_cabecera_login li {
+    float: left;
+}
+.entra {
+    background-color: #2aa8da;
+}
+.menu_cabecera_login_md {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.menu_cabecera_login i {
+
+    position: relative;
+    top: 4px;
+}
+.menu_cabecera li, .menu_cabecera_login li {
+    float: left;
+}
+.nombre_usuario a {
+    background-image: url("../img/cara.png");
+    background-repeat: no-repeat;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    float: right;
+    font-family: "Satisfy",cursive;
+    font-size: 20px;
+    height: 30px;
+    margin-top: 12px;
+    padding-left: 40px;
+}
+.menu_cabecera_login li a {
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    display: block;
+    line-height: 50px;
+    min-height: 53px;
+    text-align: center;
+    text-decoration: none;
+}
+.menu_cabecera_login_xs {
+    min-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.menu_cabecera_login_md {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.menu_cabecera li {
+    width: 168px;
+}
+.menu_cabecera li a {
+    border-left: 2px solid #12526b;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    display: block;
+
+    min-height: 54px;
+    min-width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.menu_cabecera li a.activo, .menu_cabecera li a:hover {
+    background-color: #12526b;
+}
+.menu_cabecera li:last-child a {
+    border-right: 2px solid #12526b;
+}
+.entra {
+    background-color: #2aa8da;
+}
+.entra.activo {
+    background-color: #2aa8da;
+}
+.registrate {
+    background-color: #ce0065;
+    margin-left: 2px;
+}
+.registrate.no_activo {
+    background-color: #0b3b4d;
+}
+.logo a span {
+    display: none;
+}
+.super-header {
+    background-color: #0b3b4d;
+    height: 55px;
+    z-index: 9999;
+}
+.menu_cabecera ul {
+    display: inline-block;
+    float: none;
+    margin: auto;
+}
+.menu_cabecera li {
+    background-color: #0b3b4d;
+    padding: 0;
+    text-align: center;
+}
+.menu_cabecera a {
+    color: #fff;
+}
+.menu_cabecera, .menu_cabecera_login ul {
+    font-family: "Satisfy",cursive;
+    font-size: 20px;
+    font-weight: normal;
+    list-style-type: none;
+    margin: 0;
+    min-height: 54px;
+    padding: 0;
+}
+.menu_cabecera_login ul {
+    margin-right: -15px;
+}
+.menu_cabecera_login ul li a span {
+    margin-right: 2px;
+    opacity: 0.7;
+}
+.menu_cabecera_login ul li a {
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    display: block;
+    line-height: 54px;
+    min-height: 55px;
+    padding: 12px 5px;
+    text-align: center;
+    text-decoration: none;
+}
+.menu_cabecera_login ul li.registrate a {
+    background-color: #2aa8da;
+    border: medium none;
+}
+.menu_cabecera_login ul li.entra a {
+    background-color: #12526b;
+    border-left: medium none;
+    border-right: 2px solid #0b3b4d;
+}
+.menu_cabecera_login ul li.entra.activo a {
+    background-color: #2aa8da;
+}
+.bloque_login_responsive a {
+    color: #ffffff;
+    display: block;
+    float: right;
+    font-size: 30px;
+    height: 26px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    opacity: 0.7;
+    width: 23px;
+}
+.menu_cabecera_logeado li {
+    list-style: outside none none;
+}
+.menu_cabecera_logeado .nombre_usuario a {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    float: right;
+    font-family: "Satisfy",cursive;
+    font-size: 20px;
+    height: 30px;
+    line-height: 34px;
+    margin-top: 10px;
+}
+.menu_cabecera_logeado .nombre_usuario a span {
+    float: left;
+    font-size: 34px;
+}
+.menu_cabecera_logeado .nombre_usuario a span.icon-CarruselDown {
+    float: right;
+    font-size: 20px;
+}
+.menu_desplegado {
+    background-color: #0b3b4d;
+    max-width: 320px;
+    padding: 0;
+    right: 0;
+    z-index: 666;
+}
+.menu_desplegado ul {
+    margin: 0;
+    padding: 0;
+}
+.menu_desplegado li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu_desplegado li a {
+    border-bottom: 2px solid #0f526b;
+    color: #ffffff;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 44px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+.menu_desplegado li a.activo, .menu_desplegado li a:hover {
+    background-color: #0f526b;
+}
+.menu_desplegado li li a {
+    padding-left: 40px;
+}
+.menu_desplegado .submenu {
+    display: none;
+}
+.menu_cabecera, .menu_cabecera_login {
+    font-family: "Satisfy",cursive;
+    font-size: 20px;
+    font-weight: normal;
+    list-style-type: none;
+}
