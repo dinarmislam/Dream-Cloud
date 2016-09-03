@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
 	def update
 		@blog = Blog.find(params[:id])
 
-		if @blog.update(params[:blog].permit(:title, :body))
+		if @blog.update(params[:blog].permit(:title, :body, :image))
 			redirect_to @blog
 		else
 			render 'edit'
@@ -47,7 +47,7 @@ class BlogsController < ApplicationController
 
 	private
 		def blog_params
-			params.require(:blog).permit(:title, :body)
+			params.require(:blog).permit(:title, :body, :image)
 		end
 
 end

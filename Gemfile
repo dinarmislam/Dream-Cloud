@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'summernote-rails'
 gem 'codemirror-rails'
 gem "font-awesome-rails"
+gem "paperclip", "~> 5.0.0"
 group :development, :test do
   gem 'byebug'
 end

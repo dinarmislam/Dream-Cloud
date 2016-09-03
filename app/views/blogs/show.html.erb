@@ -9,6 +9,7 @@
 		  <%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 	</p>
+	<p><%= image_tag @blog.image.url(:large) %></p>
 	<p>
 		<%= @blog.body.html_safe %>
 	</p>
