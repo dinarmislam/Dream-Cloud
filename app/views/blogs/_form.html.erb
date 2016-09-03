@@ -4,6 +4,9 @@
 	<%= f.input :title, input_html:{class:'form-control'} %>
 </div>
 <div class="form-group">
+	<%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Chose a Category"} %>
+</div>
+<div class="form-group">
     <%= f.input :image, as: :file %>
   </div>
 	<div class="form-group">

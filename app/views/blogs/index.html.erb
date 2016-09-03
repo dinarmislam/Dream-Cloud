@@ -1,14 +1,40 @@
-<h1>Most recent entries</h1>
-<% @blogs.each do |blog| %>
-	<div class="post_wrapper">
-		<h2 class="title"><%= link_to blog.title, blog %></h2>
-		<p class="date"><%= blog.created_at.strftime("%B, %d, %Y") %></p>
+<div class="row">
+  <div class="col-md-9">
+		<h2 class="current-category"><%= params[:category] %></h2>
+			<% if current_page?(root_path) %>
+				  <h1> Blog List </h1>
+		 <% end %>
+
+		<% if @blogs.count == 0 %>
+
+			<h4>There are no Posts currently in this category</h4>
+
+		<% else %>
+							<% @blogs.each do |blog| %>
+								<div class="post_wrapper">
+									<h3 class="title"><%= link_to blog.title, blog %></h3>
+									<p class="date"><%= blog.created_at.strftime("%B, %d, %Y") %></p>
+
+								</div>
+							<% end %>
+
+							<%= will_paginate @blogs %>
+		<% end %>
+		<p>
+		<%= link_to 'New Blog', new_blog_path(@blog) %>
+		</p>
+	</div>
+
+  <div class="col-md-3">
+		<h3>Blogs Category</h3>
+		<ul class="nav navbar-nav blogcategory">
+						<% Category.all.each do |category| %>
+							<li class="<%= 'active' if params[:category] == category.name %>">
+								<%= link_to category.name, blogs_path(category: category.name), class: "link" %>
+							</li>
+						<% end %>
+
+		</ul>
 
 	</div>
-<% end %>
-
-<%= will_paginate @blogs %>
-
-<p>
-<%= link_to 'New Blog', new_blog_path(@blog) %>
-</p>
+</div>

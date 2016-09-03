@@ -1,7 +1,12 @@
 class BlogsController < ApplicationController
 
   def index
-    @blogs=Blog.all.order('created_at DESC').paginate(page: params[:page], per_page: 5)
+    if params[:category].blank?
+			@blogs= Blog.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
+		else
+			@category_id = Category.find_by(name: params[:category]).id
+			@blogs = Blog.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
+		end
   end
   def new
     @blog=Blog.new
@@ -28,7 +33,7 @@ class BlogsController < ApplicationController
 	def update
 		@blog = Blog.find(params[:id])
 
-		if @blog.update(params[:blog].permit(:title, :body, :image))
+		if @blog.update(params[:blog].permit(:title, :body, :image, :category_id))
 			redirect_to @blog
 		else
 			render 'edit'
@@ -47,7 +52,7 @@ class BlogsController < ApplicationController
 
 	private
 		def blog_params
-			params.require(:blog).permit(:title, :body, :image)
+			params.require(:blog).permit(:title, :body, :image, :category_id)
 		end
 
 end
