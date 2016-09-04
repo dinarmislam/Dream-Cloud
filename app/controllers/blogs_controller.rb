@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-
+before_action :authenticate_user!, except: [:index, :show]
   def index
     if params[:category].blank?
 			@blogs= Blog.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
@@ -22,6 +22,8 @@ class BlogsController < ApplicationController
   end
   def show
 		@blog= Blog.find(params[:id])
+
+    @new_comment    = Comment.build_from(@blog, current_user.id, "")
 
 	end
 

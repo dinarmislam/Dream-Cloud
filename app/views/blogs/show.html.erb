@@ -13,5 +13,6 @@
 	<p>
 		<%= @blog.body.html_safe %>
 	</p>
+	<%= render partial: "comments/template", locals: {commentable: @blog, new_comment: @comment} %>  
 
 </div>
