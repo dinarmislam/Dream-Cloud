@@ -3,5 +3,6 @@ class Blog < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :category
+  has_many :comments, as: :commentable
 
 end
