@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-
+before_action :authenticate_user!, except: [:index, :show]
   def index
     if params[:category].blank?
 			@blogs= Blog.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
