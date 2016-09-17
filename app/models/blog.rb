@@ -4,5 +4,6 @@ class Blog < ActiveRecord::Base
 
   belongs_to :category
   has_many :comments, as: :commentable
-
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end

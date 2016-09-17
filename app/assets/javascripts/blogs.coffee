@@ -10,7 +10,7 @@ $ ->
   # to call summernote editor
   summer_note.summernote
     # to set options
-    height:500
+    height:200
     lang: 'ko-KR'
     codemirror:
       lineNumbers: true

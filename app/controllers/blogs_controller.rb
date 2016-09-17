@@ -21,17 +21,17 @@ before_action :authenticate_user!, except: [:index, :show]
 
   end
   def show
-		@blog= Blog.find(params[:id])
+		@blog= Blog.friendly.find(params[:id])
 
 	end
 
 	def edit
-		@blog = Blog.find(params[:id])
+		@blog = Blog.friendly.find(params[:id])
 
 	end
 
 	def update
-		@blog = Blog.find(params[:id])
+		@blog = Blog.friendly.find(params[:id])
 
 		if @blog.update(params[:blog].permit(:title, :body, :image, :category_id))
 			redirect_to @blog
@@ -41,7 +41,7 @@ before_action :authenticate_user!, except: [:index, :show]
 	end
 
 	def destroy
-		@blog = Blog.find(params[:id])
+		@blog = Blog.friendly.find(params[:id])
 		@blog.destroy
 
 		redirect_to root_path
@@ -52,7 +52,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
 	private
 		def blog_params
-			params.require(:blog).permit(:title, :body, :image, :category_id)
+			params.require(:blog).permit(:title, :body, :image, :category_id, :slug)
 		end
 
 end
