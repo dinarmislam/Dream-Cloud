@@ -1,0 +1,1 @@
+json.array! @share_dreams, partial: 'share_dreams/share_dream', as: :share_dream

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tittle:</strong>
+  <%= @share_dream.tittle %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @share_dream.description %>
+</p>
+
+<%= link_to 'Edit', edit_share_dream_path(@share_dream) %> |
+<%= link_to 'Back', share_dreams_path %>

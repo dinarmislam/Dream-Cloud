@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :share_dreams
+  resources :dictionaries
   resources :blogs do
     resources :comments
     end
@@ -7,6 +9,6 @@ Rails.application.routes.draw do
       resources :comments
   end
   devise_for :users
-  root 'blogs#index'
+  root 'share_dreams#index'
 
 end

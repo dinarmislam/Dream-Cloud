@@ -2,6 +2,7 @@
 	<h1 class="title">
 		<%= @blog.title %>
 	</h1>
+	<p><%= render_shareable %></p>
 	<p class="date">
 		Submitted <%= time_ago_in_words(@blog.created_at) %> Ago
     <% if @blog.category_id? %>|<%= link_to Category.find(@blog.category_id).name, blogs_path(category: @blog.category.name) %> <% end %>
@@ -13,6 +14,7 @@
 	<p>
 		<%= @blog.body.html_safe %>
 	</p>
+	<p><%= render_shareable %></p>
 	<h3>Comments</h3>
 
 	<%= form_for [@blog, Comment.new] do |f| %>

@@ -1,0 +1,1 @@
+json.partial! "share_dreams/share_dream", share_dream: @share_dream

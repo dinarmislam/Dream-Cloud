@@ -20,7 +20,7 @@ gem 'will_paginate'
 gem 'jquery-turbolinks'
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise'
-
+gem 'shareable'
 group :development, :test do
   gem 'byebug'
 end
